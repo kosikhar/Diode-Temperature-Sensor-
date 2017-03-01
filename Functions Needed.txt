@@ -1,0 +1,34 @@
+Here is a list of functions needed for the project. We'll also
+need a spreedsheet logging the LM35 output with the diode output.
+
+Main
+-Constantly get temperture reading
+-Average this reading over a short time
+-Output to display
+
+ADC Read
+-probes ADC connected to sensor
+- 0 to 1024
+
+Temperture Conversion
+-Find a model for the relationship of the ADC to temperture
+ This is to be done by comparing values to the LM35
+-Diode is (Digikey #1N4734AFS-ND)
+-We are attempting bias of 100uA 
+-Max temp is 80C
+-Diode decreases forward voltage drop by 2.5mV per degree.
+
+Temperture Conversion LM35
+-Model for the LM35.
+-temporary, not to be used in final project.
+
+Average
+- Average temperture readings over short time
+- Probably should use values from ADC read to keep uint16 type
+
+LCD Print
+- Print the average temperture to the LCD
+
+
+ 
+
