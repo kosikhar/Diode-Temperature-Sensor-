@@ -10,7 +10,7 @@ ADC Read
 -probes ADC connected to sensor
 - 0 to 1024
 
-Temperture Conversion
+Temperture Conversion Diode
 -Find a model for the relationship of the ADC to temperture
  This is to be done by comparing values to the LM35
 -Diode is (Digikey #1N4734AFS-ND)
@@ -20,7 +20,7 @@ Temperture Conversion
 
 Temperture Conversion LM35
 -Model for the LM35.
--temporary, not to be used in final project.
+-Linear model 10mV/C
 
 Average
 - Average temperture readings over short time
