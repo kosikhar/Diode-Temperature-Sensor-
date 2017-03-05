@@ -13,7 +13,7 @@
 #include <lcd.h>
 #include <stdlib.h>
 
-
+void lcd_write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, uint8_t temperture_lm35, uint8_t temperture_diode );
 
 
 
