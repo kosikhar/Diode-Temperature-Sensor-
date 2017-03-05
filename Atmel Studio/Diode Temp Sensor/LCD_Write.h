@@ -11,6 +11,7 @@
 
 #include <avr/io.h>
 #include <lcd.h>
+#include <stdlib.h>
 
 
 
