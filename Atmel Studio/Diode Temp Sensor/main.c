@@ -9,6 +9,9 @@ int main(void)
 	uint8_t temperture_lm35 = 0x0;
 	uint8_t temperture_diode = 0x0;
 
+	adc_reading_lm35 = ADCRead(0x0);  //Reads ADC, the input is the number number of the ADC
+	adc_reading_diode = ADCRead(0x1);
+
 	lcd_write(adc_reading_lm35, adc_reading_diode, temperture_lm35, temperture_diode);
 }
 

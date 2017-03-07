@@ -118,6 +118,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ADC_Read.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ADC_Read.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="lcd.c">
       <SubType>compile</SubType>
     </Compile>

@@ -20,16 +20,16 @@
 	
 	lcd_clrscr(); //Clear screen then send cursor to "home" (0,0)
 
-	char * display_line1[16] = malloc(16);   //Allocate memory for each line. char = 1B and theres a max of 16 char
-	char * display_line2[16] = malloc(16);
+	char * display_line1[16];   //Allocate memory for each line. char = 1B and theres a max of 16 char
+	char * display_line2[16];
 	
 	if ( (display_line1 == NULL) || (display_line2 == NULL) ){
 		char * error = "error"; 
-		lcd_puts();
+		lcd_puts(error);
 	}
 	
-	display_line1 = sprintf("LM35 :%4.0d - %2.0dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
-	display_line2 = sprintf("DIODE:%4.0d - %2.0dC", adc_reading_diode, temperture_diode);   //Second line on the LCD
+	*display_line1 = sprintf("LM35 :%4.0d - %2.0dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
+	*display_line2 = sprintf("DIODE:%4.0d - %2.0dC", adc_reading_diode, temperture_diode);   //Second line on the LCD
 
 	lcd_puts( display_line1 );               //display line 1
 	lcd_gotoxy((uint8_t) 0x0, (uint8_t) 0x1);    //Move cursor to the second line
