@@ -20,8 +20,8 @@
 	
 	lcd_clrscr(); //Clear screen then send cursor to "home" (0,0)
 
-	char display_line1[16];   //Allocate memory for each line. char = 1B and theres a max of 16 char
-	char display_line2[16];
+	char display_line1[17];   //Allocate memory for each line. char = 1B and theres a max of 16 char.
+	char display_line2[17];   // 1B for the NULL character produced by sprintf.
 	
 	if ( (display_line1 == NULL) || (display_line2 == NULL) ){
 		char * error = "error"; 

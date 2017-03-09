@@ -9,7 +9,7 @@
 #ifndef LCD_WRITE_H_
 #define LCD_WRITE_H_
 
-#include <stdlib.h>
+#include <stdio.h>
 #include <avr/io.h>
 #include "lcd.h"
 

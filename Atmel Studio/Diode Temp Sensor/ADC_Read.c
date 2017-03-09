@@ -16,12 +16,15 @@ uint16_t ADCRead(uint8_t pin){
 		ADCSRA |= (1 << ADSC); //Start Conversation, 
 
 		while( (ADCSRA & (1 << ADSC)) ); //Wait till conversation complete ( ADSC == 0 )
+
+		ADCSRA |= (1 << ADIF);   // Clear ADC Interrupt Flag
+
 		
 		input[i].lowbyte = 0;
 		input[i].highbyte = 0;
 		input[i].lowbyte = ADCL;  //Read output
 		input[i].highbyte = ADCH; 
-		
+		_delay_ms(1);
 	}
 
 	uint32_t sum = 0x0;
