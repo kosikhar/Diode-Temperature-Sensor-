@@ -37,9 +37,9 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../ADC_Read.c \
+../ADCRead.c \
 ../lcd.c \
-../LCD_Write.c \
+../LCDWrite.c \
 ../main.c
 
 
@@ -50,27 +50,27 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-ADC_Read.o \
+ADCRead.o \
 lcd.o \
-LCD_Write.o \
+LCDWrite.o \
 main.o
 
 OBJS_AS_ARGS +=  \
-ADC_Read.o \
+ADCRead.o \
 lcd.o \
-LCD_Write.o \
+LCDWrite.o \
 main.o
 
 C_DEPS +=  \
-ADC_Read.d \
+ADCRead.d \
 lcd.d \
-LCD_Write.d \
+LCDWrite.d \
 main.d
 
 C_DEPS_AS_ARGS +=  \
-ADC_Read.d \
+ADCRead.d \
 lcd.d \
-LCD_Write.d \
+LCDWrite.d \
 main.d
 
 OUTPUT_FILE_PATH +=Diode\ Temp\ Sensor.elf
@@ -87,7 +87,7 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
-./ADC_Read.o: .././ADC_Read.c
+./ADCRead.o: .././ADCRead.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -101,7 +101,7 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
-./LCD_Write.o: .././LCD_Write.c
+./LCDWrite.o: .././LCDWrite.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.9.2
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.1.130\gcc\dev\atmega328" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

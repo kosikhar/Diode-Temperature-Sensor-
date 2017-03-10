@@ -1,5 +1,5 @@
-#ifndef ADC_READ_H_
-#define ADC_READ_H_
+#ifndef ADCREAD_H_
+#define ADCREAD_H_
 
 #ifndef F_CPU 
 #define F_CPU 8000000UL
@@ -13,9 +13,9 @@ struct ADCOut{    //ADC output is in 2 bytes, so we're going to use a structure 
 	uint8_t highbyte;	 //This "                                 " ADCH  (ADCL and ADCH are registers that hold ADC data)
 };
 
-uint16_t ADCRead(uint8_t pin);
+uint16_t extern ADCRead(uint8_t pin);
 
-uint16_t byteCombine(struct ADCOut input);  //Combines 2, 8-bit numbers into a 10-bit (For ADC Out)
+uint32_t extern byteCombine(struct ADCOut input);  //Combines 2, 8-bit numbers into a 10-bit (For ADC Out)
 
 
 #endif 

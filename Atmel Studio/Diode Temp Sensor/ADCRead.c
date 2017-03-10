@@ -1,4 +1,4 @@
-#include "ADC_Read.h"
+#include "ADCRead.h"
 
 uint16_t ADCRead(uint8_t pin){
 
@@ -37,7 +37,7 @@ uint16_t ADCRead(uint8_t pin){
 	return average_reading;
 }
 
-uint16_t byteCombine(struct ADCOut input){ //The ADCOut struct holds these 2 8bit numbers
+uint32_t byteCombine(struct ADCOut input){ //The ADCOut struct holds these 2 8bit numbers
 	
 	uint32_t output = 0x0;
 	

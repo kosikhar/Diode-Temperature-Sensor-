@@ -1,4 +1,4 @@
-LCD_Write.d LCD_Write.o: .././LCD_Write.c .././LCD_Write.h \
+LCDWrite.d LCDWrite.o: .././LCDWrite.c .././LCDWrite.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdint.h \
@@ -17,7 +17,7 @@ LCD_Write.d LCD_Write.o: .././LCD_Write.c .././LCD_Write.h \
  .././lcd.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
 
-.././LCD_Write.h:
+.././LCDWrite.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 

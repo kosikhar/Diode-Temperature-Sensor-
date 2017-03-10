@@ -6,15 +6,15 @@
  */ 
 
 
-#ifndef LCD_WRITE_H_
-#define LCD_WRITE_H_
+#ifndef LCDWRITE_H_
+#define LCDWRITE_H_
 
 #include <stdio.h>
 #include <avr/io.h>
 #include "lcd.h"
 
 
-void lcd_write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, uint8_t temperture_lm35, uint8_t temperture_diode );
+void extern lcd_Write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, uint8_t temperture_lm35, uint8_t temperture_diode );
 
 
 
