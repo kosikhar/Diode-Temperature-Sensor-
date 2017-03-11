@@ -9,6 +9,7 @@
 #ifndef LCDWRITE_H_
 #define LCDWRITE_H_
 
+#define F_CPU 8000000UL
 #include <stdio.h>
 #include <avr/io.h>
 #include "lcd.h"

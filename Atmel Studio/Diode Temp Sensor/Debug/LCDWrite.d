@@ -15,7 +15,10 @@ LCDWrite.d LCDWrite.o: .././LCDWrite.c .././LCDWrite.h \
  d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  .././lcd.h \
- d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h
+ d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
+ d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
+ d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
+ d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
 
 .././LCDWrite.h:
 
@@ -52,3 +55,9 @@ d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 .././lcd.h:
 
 d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
+
+d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
+
+d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
+
+d:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:

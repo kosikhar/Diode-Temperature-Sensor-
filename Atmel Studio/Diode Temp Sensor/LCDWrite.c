@@ -4,7 +4,11 @@
  * Created: 2017-03-04 10:13:34 AM
  *  Author: Koltin Kosik-Harvey
  */
- #include "LCDWrite.h"
+#define F_CPU 8000000UL
+
+#include "LCDWrite.h"
+#include <util/delay.h>
+
  
  /*
  **************************************
