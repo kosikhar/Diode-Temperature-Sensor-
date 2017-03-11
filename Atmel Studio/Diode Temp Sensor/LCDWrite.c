@@ -16,7 +16,7 @@
 
  void lcd_Write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, uint8_t temperture_lm35, uint8_t temperture_diode ){  //Not Tested
 
-	lcd_init( LCD_DISP_ON );   //Turn the LCD on, with cursor.
+	lcd_init( LCD_DISP_ON );   //Turn the LCD on, without cursor.
 
 	char display_line1[17];   //Allocate memory for each line. char = 1B and theres a max of 16 char.
 	char display_line2[17];   // 1B for the NULL character produced by sprintf.
@@ -26,8 +26,8 @@
 		lcd_puts(error);
 	}
 	
-	sprintf(display_line1, "LM35 :%4.0d -%3.0dC", (int) adc_reading_lm35, (int) temperture_lm35);     //First line on the LCD
-	sprintf(display_line2, "DIODE:%4.0d -%3.0dC", (int) adc_reading_diode, (int) temperture_diode);   //Second line on the LCD
+	sprintf(display_line1, "LM35 :%4.0d -%3.0dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
+	sprintf(display_line2, "DIODE:%4.0d -%3.0dC", adc_reading_diode, temperture_diode);   //Second line on the LCD
 
 	lcd_gotoxy((uint8_t) 0x0, (uint8_t) 0x0);    //Move cursor to the first line
 	lcd_puts( display_line1 );               //display line 1

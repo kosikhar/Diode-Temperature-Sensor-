@@ -1,48 +1,40 @@
 #include "ADCRead.h"
 
+#define number_samples 64
+#define sample_time_us 100
+
 uint16_t ADCRead(uint8_t pin){
 
-	struct ADCOut input[32]; //We're going to sample and average from 16 readings. 
-
+	uint16_t input; //We're going to sample and average from 16 readings. 
+	double sum = 0; //The sum of all samples.
+	double average = 0; // the average of all the samples.
+	
 	ADCSRB &= 0x00; //Auto Trigger = Free Running mode
-	ADCSRA |= (1 << ADEN) | ( 1 << ADPS2);                // ADC Enable;
-	ADMUX |= (1 << REFS0); //Set reference, AVcc	      // Interupt Disable; Freq/16 
+	ADCSRA |= (1 << ADEN);                // ADC Enable; Interupt Disable; Freq/1 
+	ADMUX |= (1 << REFS0); //Set reference, AVcc	  
+	
+	ADMUX &= 0b11110000;
+	    
 	ADMUX |= pin;  //Set input pin
-
-	uint8_t i;
-	for (i = 0x0; i < 31 ; i++){
+	
+	uint16_t i;
+	for(i = 0; i < number_samples; i++) {
 	
 		ADCSRA |= (1 << ADSC); //Start Conversation
 
 		while( (ADCSRA & (1 << ADSC)) ); //Wait till conversation complete ( ADSC == 0 )
 
 		ADCSRA |= (1 << ADIF);   // Clear ADC Interrupt Flag
-
 		
-		input[i].lowbyte = 0;
-		input[i].highbyte = 0;
-		input[i].lowbyte = ADCL;  //Read output
-		input[i].highbyte = ADCH; 
-
-		_delay_ms(1);
+		input = ADC; 
+		sum = sum + input;
+		
+		_delay_us(sample_time_us);
+		
 	}
-
-	uint32_t sum = 0x0;
-	for (i = 0x0; i < 30; i = i + 2)
-	{
-		sum = byteCombine(input[i]) + byteCombine(input[i+1]);  // add up all the readings
-	}
-
-	uint16_t average_reading = (uint16_t) (sum / 16);  //Find the average of the readings and return the value
-	return average_reading;
-}
-
-uint32_t byteCombine(struct ADCOut input){ //The ADCOut struct holds these 2 8bit numbers
 	
-	uint32_t output = 0x0;
-	
-	output = (input.highbyte << 8) | input.lowbyte;
-
-	return output;
+	average = sum / number_samples;
+		
+	return (uint16_t) average;
 }
 
