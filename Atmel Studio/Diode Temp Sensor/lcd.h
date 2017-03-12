@@ -41,7 +41,6 @@
  @copyright (C) 2015 Peter Fleury, GNU General Public License Version 3
   
 */
-
 #include <inttypes.h>
 #include <avr/pgmspace.h>
 
