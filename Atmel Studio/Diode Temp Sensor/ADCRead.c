@@ -11,7 +11,8 @@ uint16_t ADCRead(uint8_t pin){
 	
 	ADCSRB &= 0x00; //Auto Trigger = Free Running mode
 	ADCSRA |= (1 << ADEN);                // ADC Enable; Interupt Disable; Freq/1 
-	ADMUX |= (1 << REFS0); //Set reference, AVcc	  
+	//ADMUX |= (1 << REFS0); //Set reference, AVcc
+	ADMUX |= ((1 << REFS0) | (1 << REFS1)) ; //Set Internal 1.1v reference		  
 	
 	ADMUX &= 0b11110000;
 	    
