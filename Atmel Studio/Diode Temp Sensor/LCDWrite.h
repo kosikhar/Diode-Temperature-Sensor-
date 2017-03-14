@@ -15,7 +15,7 @@
 #include "lcd.h"
 #include "TempModel.h"
 
-void extern lcd_Write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, struct double_as_2ints temperture_lm35, struct double_as_2ints temperture_diode);
+void extern lcd_Write( uint16_t adc_reading_lm35, uint16_t adc_reading_diode, uint16_t temperture_lm35, uint16_t temperture_diode);
 
 
 

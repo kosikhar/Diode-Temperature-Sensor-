@@ -17,11 +17,10 @@ int main(void)
 {
 	clock_prescale_set(clock_div_1);
 	
-	uint16_t adc_reading_lm35 = 0x0;
-	uint16_t adc_reading_diode = 0x0;
-	
-	struct double_as_2ints temperture_lm35;
-	struct double_as_2ints temperture_diode;
+	uint16_t adc_reading_lm35 = 0;
+	uint16_t adc_reading_diode = 0;
+	uint16_t temperture_lm35 = 0;
+	uint16_t temperture_diode = 0;
 
 	while(1){
 
