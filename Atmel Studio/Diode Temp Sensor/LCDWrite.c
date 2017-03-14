@@ -41,23 +41,18 @@
 		
 	} else if ( (temperture_lm35 > MAX_TEMP) && (temperture_diode < MAX_TEMP) ) {
 		
-<<<<<<< HEAD
 		sprintf(display_line1, "LM35 :%4.0d -  :(", adc_reading_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - %dC", adc_reading_diode, temperture_diode);   //Second line on the LCD		
-=======
-		sprintf(display_line1, "LM35 :%4.0d - :,C", adc_reading_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - %2dC", adc_reading_diode, temperture_diode);   //Second line on the LCD		
->>>>>>> parent of ce7b5b7... Complete!
+		sprintf(display_line2, "DIODE:%4.0d - %dC", adc_reading_diode, temperture_diode);   //Second line on the LCD			
 		
 	} else if ( (temperture_lm35 < MAX_TEMP) && (temperture_diode > MAX_TEMP) ) {
 		
 		sprintf(display_line1, "LM35 :%4.0d - %dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - :'C", adc_reading_diode);   //Second line on the LCD
+		sprintf(display_line2, "DIODE:%4.0d -  :C", adc_reading_diode);   //Second line on the LCD
 		
 	} else {
 		
-		sprintf(display_line1, "LM35 :%4.0d - :,C", adc_reading_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - :'C", adc_reading_diode);   //Second line on the LCD		
+		sprintf(display_line1, "LM35 :%4.0d -  :C", adc_reading_lm35);     //First line on the LCD
+		sprintf(display_line2, "DIODE:%4.0d -  :C", adc_reading_diode);   //Second line on the LCD		
 		
 	}
 

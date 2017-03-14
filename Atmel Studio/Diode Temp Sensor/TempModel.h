@@ -14,6 +14,8 @@
 #include <math.h>
 
 
-uint16_t temperture_model( uint16_t adc_value );
+uint16_t temperture_model_diode( uint16_t adc_value );
+
+uint16_t temperture_model_lm35( uint16_t adc_value );
 
 #endif /* TEMPMODEL_H_ */
