@@ -9,11 +9,16 @@
 #include "LCDWrite.h"
 #include <util/delay.h>
 
+#define MAX_TEMP 110
  
  /*
  **************************************
   
-  lcd_write takes in 4 values.  
+  lcd_write takes in 4 values.  As discribed in the function
+  outputs both its ADC reading and the temperture. 
+
+  The Temperture output is limited for visual purposes
+
   
  ***************************************
  */
@@ -24,18 +29,22 @@
 
 	char display_line1[17];   //Allocate memory for each line. char = 1B and theres a max of 16 char.
 	char display_line2[17];   // 1B for the NULL character produced by sprintf.
+
+
+
+	// The if statement is to prevent overloading the output since the model allows for 
+	// such occurances. 
+	if ( (temperture_lm35 < MAX_TEMP) && (temperture_diode < MAX_TEMP) ){
 	
-	if ( (temperture_lm35 < 99) && (temperture_diode < 99) ){
-	
-		sprintf(display_line1, "LM35 :%4.0d - %2dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - %2dC", adc_reading_diode, temperture_diode);   //Second line on the LCD
+		sprintf(display_line1, "LM35 :%4.0d - %dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
+		sprintf(display_line2, "DIODE:%4.0d - %dC", adc_reading_diode, temperture_diode);   //Second line on the LCD
 		
-	} else if ( (temperture_lm35 > 99) && (temperture_diode < 99) ) {
+	} else if ( (temperture_lm35 > MAX_TEMP) && (temperture_diode < MAX_TEMP) ) {
 		
 		sprintf(display_line1, "LM35 :%4.0d -  :(", adc_reading_lm35);     //First line on the LCD
-		sprintf(display_line2, "DIODE:%4.0d - %2dC", adc_reading_diode, temperture_diode);   //Second line on the LCD		
+		sprintf(display_line2, "DIODE:%4.0d - %dC", adc_reading_diode, temperture_diode);   //Second line on the LCD		
 		
-	} else if ( (temperture_lm35 < 99) && (temperture_diode > 99) ) {
+	} else if ( (temperture_lm35 < MAX_TEMP) && (temperture_diode > MAX_TEMP) ) {
 		
 		sprintf(display_line1, "LM35 :%4.0d - %dC", adc_reading_lm35, temperture_lm35);     //First line on the LCD
 		sprintf(display_line2, "DIODE:%4.0d -  :(", adc_reading_diode);   //Second line on the LCD

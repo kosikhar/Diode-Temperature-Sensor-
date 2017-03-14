@@ -8,7 +8,7 @@
 uint16_t ADCRead(uint8_t pin){
 
 	uint16_t input; //We're going to sample and average from 16 readings. 
-	double sum = 0; //The sum of all samples.
+	uint32_t sum = 0; //The sum of all samples.
 	double average = 0; // the average of all the sample
 	
 	ADCSRB &= 0x00; //Auto Trigger = Free Running mode
