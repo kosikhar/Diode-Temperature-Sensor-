@@ -3,8 +3,7 @@
 #include <util/delay.h>
 
 //Adds a basic low pass filter to the ADC input
-#define number_samples 128
-#define sample_time_us 100
+#define number_samples 16384
 
 uint16_t ADCRead(uint8_t pin){
 
@@ -32,8 +31,6 @@ uint16_t ADCRead(uint8_t pin){
 		
 		input = ADC; 
 		sum = sum + input;
-		
-		_delay_us(sample_time_us);
 		
 	}
 	
