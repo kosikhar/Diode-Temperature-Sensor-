@@ -18,11 +18,9 @@ uint16_t temperture_model_lm35( uint16_t adc_value ){
 	
 	uint16_t temperture;
 
-	temperture = 10.753 * adc_value;
-	
-	temperture = temperture / 100;
+	temperture = adc_value * 10.75;
 
-	return temperture;
+	return (temperture / 100 - 2);
 
 
 }
