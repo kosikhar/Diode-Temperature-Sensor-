@@ -4,7 +4,7 @@
 
 //Adds a basic low pass filter to the ADC input
 #define number_samples 1024
-#define sample_time_us 100
+#define sample_time_us 50
 
 uint16_t ADCRead(uint8_t pin){
 
@@ -12,12 +12,12 @@ uint16_t ADCRead(uint8_t pin){
 	uint32_t sum = 0; //The sum of all samples.
 	uint16_t average = 0; // the average of all the sample
 	
-	ADCSRB &= 0x00; //Auto Trigger = Free Running mode
-	ADCSRA |= (1 << ADEN);                // ADC Enable; Interupt Disable; Freq/1 
+	ADCSRB &= 0x00; //Free Running mode (Triggering Disabled in ADCSRA)
+	ADCSRA |= (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1);// ADC Enable; Interupt Disable; Freq/64
 	//ADMUX |= (1 << REFS0); //Set reference, AVcc
 	ADMUX |= ((1 << REFS0) | (1 << REFS1)) ; //Set Internal 1.1v reference		  
 	
-	ADMUX &= 0b11110000;
+	ADMUX &= 0b11110000;  //Reset ADC MUX Select
 	    
 	ADMUX |= pin;  //Set input pin
 	

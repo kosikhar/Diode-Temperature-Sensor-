@@ -5,12 +5,10 @@ uint16_t temperture_model_diode( uint16_t adc_value ){     //Assuming the ADC ou
 	
 	uint16_t temperture;
 	
-	temperture = 28755;
-	temperture = temperture - ( 60.481 * adc_value );
-	
-	temperture = temperture / 100;
+	temperture = 31909;
+	temperture = temperture - ( 68.019 * adc_value );
 
-	return temperture;
+	return (temperture / 100);
 	
 } 
 
@@ -20,7 +18,7 @@ uint16_t temperture_model_lm35( uint16_t adc_value ){
 
 	temperture = adc_value * 10.75;
 
-	return (temperture / 100 - 2);
+	return (temperture / 100);
 
 
 }
