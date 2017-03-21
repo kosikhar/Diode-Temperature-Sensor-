@@ -41,6 +41,8 @@
  @copyright (C) 2015 Peter Fleury, GNU General Public License Version 3
   
 */
+#define F_CPU 8000000UL
+
 #include <inttypes.h>
 #include <avr/pgmspace.h>
 

@@ -22,7 +22,7 @@
        See the C include lcd.h file for a description of each function
        
 *****************************************************************************/
-#define F_CPU 1000000UL
+#define F_CPU 8000000UL
 
 #include <inttypes.h>
 #include <avr/io.h>
